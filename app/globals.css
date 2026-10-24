@@ -22,5 +22,79 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+/* Voice orb animations */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+@keyframes ripple {
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+
+@keyframes blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-1.2deg) translateY(0); }
+  50% { transform: rotate(1.2deg) translateY(-1.5px); }
+}
+
+.orb-breathe { animation: breathe 4s ease-in-out infinite; }
+.orb-ripple { animation: ripple 1.8s ease-out infinite; }
+.wave-bar { animation: wave 0.9s ease-in-out infinite; }
+
+/* Talking avatar */
+.avatar-eyes {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: blink 4.5s ease-in-out infinite;
+}
+
+.avatar-head {
+  transform-box: fill-box;
+  transform-origin: 50% 90%;
+  animation: sway 6s ease-in-out infinite;
+}
+
+/* Subtle grid behind the page */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+/* Soft gradient outline for the glass cards */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(140deg, rgba(167, 139, 250, 0.45), rgba(255, 255, 255, 0.06) 40%, rgba(232, 121, 249, 0.35));
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  pointer-events: none;
+}
+
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .orb-breathe, .orb-ripple, .wave-bar, .avatar-eyes, .avatar-head { animation: none; }
 }
