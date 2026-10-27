@@ -25,7 +25,7 @@ For questions about Sneha, the agent uses only this document, the resume (RESUME
 
 # 2. Personal Biography
 
-My name is Sneha Mishra. I was born in Bokaro Steel City, Jharkhand, India, and completed my schooling in Bokaro through Class 12.
+My name is Sneha Mishra. I was born in Bokaro Steel City, Jharkhand, India, and completed my schooling in Bokaro through Class 12. My age is 21 years old. My DOB is 26th October 2005.
 
 I scored 90% in Class 10 and 79% in Class 12. I am currently pursuing a Bachelor of Technology in Computer Science Engineering at DPG Institute of Technology and Management. I am in my fourth year, currently studying in the seventh semester, and have maintained an 8+ CGPA throughout my semesters.
 
